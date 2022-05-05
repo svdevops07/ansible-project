@@ -11,7 +11,7 @@
 
   - name: Clone boxfuse-project from repository
     git:
-      repo: clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
       dest: /usr/share/maven
       clone: yes
       update: yes
