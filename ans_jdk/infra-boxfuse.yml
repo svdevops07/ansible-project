@@ -35,7 +35,7 @@
       dest: /var/lib/tomcat9/webapps
     delegate_to: 192.168.99.112
 
-  - name: Ensure tomcat service is started
-    service:
-      name: tomcat
-      state: started
+#  - name: Ensure tomcat service is started
+#    service:
+#      name: tomcat
+#      state: started
