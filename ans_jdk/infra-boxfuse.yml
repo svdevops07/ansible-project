@@ -9,10 +9,12 @@
       name: maven
       state: present
 
-  - name: Ensure boxfuse-project from repository
+  - name: Clone boxfuse-project from repository
     git:
       repo: clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
       dest: /usr/share/maven
+      clone: yes
+      update: yes
 
   - name: Ensure maven package
     shell:  cd /usr/share/maven/boxfuse-sample-java-war-hello && mvn package
