@@ -1,0 +1,33 @@
+---
+- name: Install and set nginx
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Ensure nginx packages to present
+      apt:
+        name: nginx
+        state: present
+
+    - name: Change port for nginx
+      replace:
+        path: /etc/nginx/sites-available/default
+        regexp: '8090 '
+        replace: "8070 "
+
+    - name: Change port for nginx
+      replace:
+        path: /var/www/html/index.html
+        regexp: 'red'
+        replace: "blue"
+
+    - name: Add line to index.html file for nginx
+      ansible.builtin.assemble:
+        src: /var/www/html/
+        dest: /var/www/html/index.html
+        delimiter: '### START FRAGMENT ###'
+
+    - name: Ensure nginx service is restarted
+      service:
+        name: nginx
+        state: restarted
