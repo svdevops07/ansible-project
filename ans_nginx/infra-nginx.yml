@@ -1,0 +1,21 @@
+---
+- name: Install and set nginx
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Ensure nginx packages to present
+      apt:
+        name: nginx
+        state: present
+
+    - name: Add line to index.html file for nginx
+      lineinfile:
+        path: /usr/share/nginx/html
+        line: <p><script> document.write(new Date().toLocaleDateString()); </script></p>
+        create: yes
+
+    - name: Ensure nginx service is started
+      service:
+        name: nginx
+        state: started
