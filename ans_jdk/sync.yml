@@ -6,6 +6,6 @@
   - name: Transfer maven artifact from maven-srv to tomcat-srv
     synchronize:
 #      mode: pull
-      src: /usr/share/maven/boxfuse-sample-java-war-hello/target/hello-1.0.war
+      src: /usr/share/maven/boxfuse-sample-java-war-hello/target/
       dest: /usr/local/tomcat/webapps/
-    delegate_to: root@192.168.99.112
+    delegate_to: 192.168.99.112
