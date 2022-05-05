@@ -26,13 +26,14 @@
   tasks:
   - name: Ensure tomcat packages are present
     apt:
-      name: tomcat
+      name: tomcat9
       state: present
 
-  - name: Ensure maven artifact to tomcat
-    copy:
-      src: root@192.168.99.112:/usr/share/maven/target
-      dest: root@192.168.99.113:/usr/local/tomcat/webapps
+  - name: Transfer maven artifact from maven-srv to tomcat-srv
+    synchronize:
+      src: /usr/share/maven/boxfuse-sample-java-war-hello/target
+      dest: /usr/local/tomcat/webapps
+      delegate_to: maven-srv
 
   - name: Ensure tomcat service is started
     service:
