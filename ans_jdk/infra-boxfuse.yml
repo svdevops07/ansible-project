@@ -12,7 +12,7 @@
   - name: Clone boxfuse-project from repository
     git:
       repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-      dest: /usr/share/maven
+      dest: /usr/share/maven/boxfuse-sample-java-war-hello
       clone: yes
       update: yes
 
