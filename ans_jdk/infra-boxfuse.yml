@@ -21,3 +21,18 @@
   hosts: tomcat-srv
   become: yes
 
+  tasks:
+  - name: Ensure tomcat packages are present
+    apt:
+      name: tomcat
+      state: present
+
+  - name: Ensure maven artifact to tomcat
+    copy:
+      src: root@192.168.99.112:/usr/share/maven/target
+      dest: root@192.168.99.113:/usr/local/tomcat/webapps
+
+  - name: Ensure tomcat service is started
+    service:
+      name: tomcat
+      state: started
