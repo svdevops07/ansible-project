@@ -7,5 +7,5 @@
     synchronize:
 #      mode: pull
       src: /usr/share/maven/boxfuse-sample-java-war-hello/target/
-      dest: /usr/local/tomcat/webapps/
+      dest: /var/lib/tomcat9/webapps
     delegate_to: 192.168.99.112
