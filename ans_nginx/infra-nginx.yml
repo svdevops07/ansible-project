@@ -9,6 +9,12 @@
         name: nginx
         state: present
 
+    - name: Change port for nginx
+      replace:
+        path: /etc/nginx/sites-available/default
+        regexp: '80'
+        replace: "8090"
+
     - name: Add line to index.html file for nginx
       lineinfile:
         path: /usr/share/nginx/html/index.html
