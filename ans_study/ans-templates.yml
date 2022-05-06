@@ -13,6 +13,14 @@
         name: nginx
         state: present
 
+    - name: Change port for nginx
+      replace:
+        path: /etc/nginx/sites-available/default
+        regexp: '80 '
+        replace: "8060 "
+        notify:
+          - restart nginx
+
     - name: Templating webservers
       template: src={{ source_folder }}/index.j2 dest={{ dest_folder }}/index.html mode=0555
       notify:
