@@ -1,2 +1,10 @@
 ---
 # tasks file for common
+- name: Ensure packages is present
+  apt: name={item} state=installed
+  with_items:
+    - tree
+    - mc
+    - htop
+    - ncdu
+    - links
