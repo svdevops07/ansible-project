@@ -5,3 +5,8 @@
 - name: Ensure Apache package is present for RedHat
   yum: name=httpd state=present
   when: ansible_os_family == "RedHat"
+  notify: Restart Apache
+
+  handlers:
+    - name: Restart Apache
+      service: name=httpd state=restarted
