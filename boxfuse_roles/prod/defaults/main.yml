@@ -1,4 +1,4 @@
 ---
 # defaults file for prod
-src_build: /usr/share/maven/boxfuse-sample-java-war-hello/target
-dest_prod: /var/lib/tomcat9/webapps
+src_build: /usr/share/maven/boxfuse-sample-java-war-hello/target/
+dest_prod: /var/lib/tomcat9/webapps/
