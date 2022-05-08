@@ -4,3 +4,5 @@
     dest: {{ dest_maven }}
     clone: yes
     update: yes
+  notify:
+    - Ensure maven package

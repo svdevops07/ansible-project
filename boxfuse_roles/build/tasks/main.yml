@@ -2,6 +2,3 @@
 # tasks file for build
 - name: Ensure maven packages are present
   apt: name=maven state=present
-
-- name: Ensure maven package
-  shell:  cd {{ dest_maven }} && mvn package

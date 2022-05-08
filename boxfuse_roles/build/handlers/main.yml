@@ -1,2 +1,4 @@
 ---
 # handlers file for build
+- name: Ensure maven package
+  shell: cd {{ dest_maven }} && mvn package
