@@ -5,8 +5,8 @@
 
 - name: Clone boxfuse-project from repository
   git:
-    repo: {{ path_repo }}
-    dest: {{ dest_maven }}
+    repo: "{{ path_repo }}"
+    dest: "{{ dest_maven }}"
     clone: yes
     update: yes
   notify:
