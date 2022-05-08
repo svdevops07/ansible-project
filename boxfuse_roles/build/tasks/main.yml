@@ -2,3 +2,12 @@
 # tasks file for build
 - name: Ensure maven packages are present
   apt: name=maven state=present
+
+- name: Clone boxfuse-project from repository
+  git:
+    repo: {{ path_repo }}
+    dest: {{ dest_maven }}
+    clone: yes
+    update: yes
+  notify:
+    - Ensure maven package
