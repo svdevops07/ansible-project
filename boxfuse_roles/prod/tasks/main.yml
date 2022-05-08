@@ -1,2 +1,6 @@
 ---
 # tasks file for prod
+- name: Ensure tomcat packages are present
+  apt:
+    name: tomcat9
+    state: present
