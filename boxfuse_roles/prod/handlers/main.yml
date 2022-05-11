@@ -1,6 +1,2 @@
 ---
 # handlers file for prod
-- name: Ensure tomcat service is restarted
-  service:
-    name: tomcat9
-    state: restarted
