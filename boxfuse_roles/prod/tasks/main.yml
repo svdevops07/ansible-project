@@ -12,8 +12,5 @@
   delegate_to: "{{ item }}"
   delegate_facts: true
   loop: {{ groups['web'] }}
-
-  - name: Ensure tomcat service is restarted
-    service:
-      name: tomcat9
-      state: restarted
+  notify:
+    - Ensure tomcat service is restarted
