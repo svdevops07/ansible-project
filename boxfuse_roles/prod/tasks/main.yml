@@ -9,4 +9,6 @@
   synchronize:
     src: "{{ src_build }}"
     dest: "{{ dest_prod }}"
-  delegate_to: 192.168.99.112
+  delegate_to: "{{ item }}"
+  delegate_facts: true
+  loop: {{ groups['web'] }}
