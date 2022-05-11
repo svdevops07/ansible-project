@@ -38,7 +38,7 @@
     delegate_facts: true
     loop: "{{ groups['web'] }}"
 
-  - name: Ensure tomcat service is started
+  - name: Ensure tomcat service is restarted
     service:
       name: tomcat9
-      state: restart
+      state: restarted
