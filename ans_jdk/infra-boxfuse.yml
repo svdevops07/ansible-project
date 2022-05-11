@@ -33,7 +33,7 @@
     synchronize:
       src: /usr/share/maven/boxfuse-sample-java-war-hello/target
       dest: /var/lib/tomcat9/webapps
-    delegate_to: web_host
+    delegate_to: "{{ groups['web'][0] }}"
 
 #  - name: Ensure tomcat service is started
 #    service:
